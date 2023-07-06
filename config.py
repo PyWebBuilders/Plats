@@ -1,0 +1,9 @@
+DEBUG = True
+WSGI_MODE = False
+
+HOST = "0.0.0.0"
+PORT = 7256
+
+
+SQLALCHEMY_DATABASE_TYPE = "sqlite"
+SQLALCHEMY_DATABASE_DB = "plats.db"
