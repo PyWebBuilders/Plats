@@ -1,3 +1,4 @@
 bframe
 gevent
 sqlalchemy
+pyjwt

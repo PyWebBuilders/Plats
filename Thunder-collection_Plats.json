@@ -1,0 +1,64 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Plats",
+    "dateExported": "2023-07-11T14:20:26.974Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "b02e09a9-c101-4afc-a719-ede1669a8b3b",
+            "name": "账号相关",
+            "containerId": "",
+            "created": "2023-07-11T14:09:16.305Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "de0a84bd-c277-45c1-8f93-d4fe04315653",
+            "colId": "b717be40-88d3-43f0-8a6c-eee88524069a",
+            "containerId": "b02e09a9-c101-4afc-a719-ede1669a8b3b",
+            "name": "注册",
+            "url": "{{host:port}}/api/v1/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-07-11T13:13:56.951Z",
+            "modified": "2023-07-11T14:13:53.710Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "zhangsan"
+                    },
+                    {
+                        "name": "password",
+                        "value": "zhangsan"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d3952c58-185b-4a07-81b8-acb5e3f6ddd0",
+            "colId": "b717be40-88d3-43f0-8a6c-eee88524069a",
+            "containerId": "b02e09a9-c101-4afc-a719-ede1669a8b3b",
+            "name": "刷新token",
+            "url": "{{host:port}}/api/v1/refresh_token",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-07-11T14:08:52.676Z",
+            "modified": "2023-07-11T14:14:12.614Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODkxMTU0MzQsInBheWxvYWQiOnsiaWQiOjd9fQ.07jHh6GfRds8aKlweEYhQknUE5ITruuy4MsZQ48chQI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
