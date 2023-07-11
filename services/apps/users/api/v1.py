@@ -1,9 +1,10 @@
 from bframe import current_app, request
 from services.apps.base import BaseAPI
+from services.apps.decorators import login_required
 from services.models import Session
 from services.models.users import User
 from services.utils import static
-from services.utils.jwt_helper import encode_token, parse_token, decode_token
+from services.utils.jwt_helper import decode_token, encode_token, parse_token
 from services.utils.orm import object_2_dict, objects_2_dict
 from services.utils.package import bad_package, ok_package
 
@@ -51,6 +52,7 @@ def refresh_token():
 
 class UserAPI(BaseAPI):
 
+    @login_required
     def get(self, *args, **kwds):
         users = Session().query(User).all()
         return ok_package(objects_2_dict(users))

@@ -23,4 +23,7 @@ def create_app(config):
     from services.apps import init_app as init_apps
     init_apps(app)
 
+    from services.apps.middlewares import init_app as init_middleware
+    init_middleware(app)
+
     return app
