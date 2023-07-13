@@ -6,7 +6,7 @@ from bframe import current_app, request
 
 def encode_token(payload, exps):
     return jwt.encode(payload={
-        "exp": datetime.datetime.now() + datetime.timedelta(seconds=exps),
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(seconds=exps),
         "payload": payload,
     }, key=current_app.Config.get("SECURE_KEY"), algorithm="HS256")
 
