@@ -1,3 +1,6 @@
+def role_visitor():
+    return 0
+
 def role_admin():
     return 1
 
