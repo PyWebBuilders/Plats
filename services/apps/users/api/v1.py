@@ -19,7 +19,8 @@ def register():
     if not all([username, password]):
         return bad_package("参数缺失")
 
-    users = Session().query(User).filter(User.username == username).all()
+    users = Session().query(User).filter(User.username == username,
+                                         User.state == static.state_valid()).all()
     if len(users):
         return bad_package("账号已被注册")
 
@@ -53,7 +54,7 @@ def login():
     user = Session().query(User).filter(or_(
         User.username == username,
         User.email == username,
-    )).first()
+    ), User.state == static.state_valid()).first()
     if user is None:
         return bad_package("账号或密码错误")
 
@@ -83,8 +84,8 @@ class UserAPI(BaseAPI):
 
     @login_required
     def get(self, *args, **kwds):
-        query = Session().query(User)
+        query = Session().query(User).filter(User.state == static.state_valid())
         if check_role() != static.role_admin():
-            query = query.filter(User.id==g.user.id)
+            query = query.filter(User.id == g.user.id)
         users = query.all()
         return ok_package(objects_2_dict(users))
