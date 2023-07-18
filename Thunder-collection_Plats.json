@@ -1,28 +1,54 @@
 {
     "client": "Thunder Client",
     "collectionName": "Plats",
-    "dateExported": "2023-07-13T06:57:15.167Z",
+    "dateExported": "2023-07-18T14:35:08.824Z",
     "version": "1.1",
     "folders": [
         {
-            "_id": "e7d5da75-b44a-4da7-a215-c7ccbf6c6a1f",
+            "_id": "2e0e2e13-211b-4a7d-a566-86adf417f703",
             "name": "账号相关",
             "containerId": "",
-            "created": "2023-07-13T01:58:47.503Z",
+            "created": "2023-07-18T13:47:49.995Z",
             "sortNum": 10000
+        },
+        {
+            "_id": "577fa725-c62c-4c70-93d6-f3b2b6015e12",
+            "name": "代码相关",
+            "containerId": "",
+            "created": "2023-07-18T13:48:00.694Z",
+            "sortNum": 20000
         }
     ],
     "requests": [
         {
-            "_id": "3a638229-a41c-4dd7-9490-c8769ff7d258",
-            "colId": "4adcef55-2485-4ce9-9c8b-2ed6dc9a7ac5",
-            "containerId": "e7d5da75-b44a-4da7-a215-c7ccbf6c6a1f",
+            "_id": "e009d3db-7ec8-4303-bb61-cde860a47075",
+            "colId": "a78a1f1c-e6fe-4da5-8c12-16b50c971b81",
+            "containerId": "577fa725-c62c-4c70-93d6-f3b2b6015e12",
+            "name": "获取代码",
+            "url": "{{host:port}}/api/v1/codes",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-07-18T13:48:00.701Z",
+            "modified": "2023-07-18T14:35:00.104Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer {{jwt_token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "eadaefd9-273e-40b4-82de-03248814c3fd",
+            "colId": "a78a1f1c-e6fe-4da5-8c12-16b50c971b81",
+            "containerId": "2e0e2e13-211b-4a7d-a566-86adf417f703",
             "name": "注册",
             "url": "{{host:port}}/api/v1/register",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2023-07-13T01:58:47.503Z",
-            "modified": "2023-07-13T02:01:25.493Z",
+            "created": "2023-07-18T13:47:49.995Z",
+            "modified": "2023-07-18T13:47:49.995Z",
             "headers": [],
             "params": [],
             "body": {
@@ -49,15 +75,15 @@
             ]
         },
         {
-            "_id": "1f756ad2-51f8-4765-adbc-73cf78fa8837",
-            "colId": "4adcef55-2485-4ce9-9c8b-2ed6dc9a7ac5",
-            "containerId": "e7d5da75-b44a-4da7-a215-c7ccbf6c6a1f",
+            "_id": "29b5172e-0c84-44a5-ba56-a299db82cac4",
+            "colId": "a78a1f1c-e6fe-4da5-8c12-16b50c971b81",
+            "containerId": "2e0e2e13-211b-4a7d-a566-86adf417f703",
             "name": "登录",
             "url": "{{host:port}}/api/v1/login",
             "method": "POST",
             "sortNum": 15000,
-            "created": "2023-07-13T02:04:34.062Z",
-            "modified": "2023-07-13T02:24:50.774Z",
+            "created": "2023-07-18T13:47:49.997Z",
+            "modified": "2023-07-18T13:47:49.997Z",
             "headers": [],
             "params": [],
             "body": {
@@ -84,15 +110,15 @@
             ]
         },
         {
-            "_id": "0b723a39-2bc2-4aa7-b2a9-064ce24290fe",
-            "colId": "4adcef55-2485-4ce9-9c8b-2ed6dc9a7ac5",
-            "containerId": "e7d5da75-b44a-4da7-a215-c7ccbf6c6a1f",
+            "_id": "2abf8a43-4b3a-41cc-8147-b46d6b07a1b8",
+            "colId": "a78a1f1c-e6fe-4da5-8c12-16b50c971b81",
+            "containerId": "2e0e2e13-211b-4a7d-a566-86adf417f703",
             "name": "刷新token",
             "url": "{{host:port}}/api/v1/refresh_token",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2023-07-13T01:58:47.504Z",
-            "modified": "2023-07-13T02:02:40.499Z",
+            "created": "2023-07-18T13:47:49.996Z",
+            "modified": "2023-07-18T13:47:49.996Z",
             "headers": [
                 {
                     "name": "Authorization",
@@ -110,15 +136,15 @@
             ]
         },
         {
-            "_id": "71a5f45c-ce3d-4ed8-af5e-31688e410e76",
-            "colId": "4adcef55-2485-4ce9-9c8b-2ed6dc9a7ac5",
-            "containerId": "e7d5da75-b44a-4da7-a215-c7ccbf6c6a1f",
+            "_id": "2d3aa955-d53c-42f8-a75e-f371bd6a9847",
+            "colId": "a78a1f1c-e6fe-4da5-8c12-16b50c971b81",
+            "containerId": "2e0e2e13-211b-4a7d-a566-86adf417f703",
             "name": "获取用户信息",
             "url": "{{host:port}}/api/v1/users",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2023-07-13T02:04:38.518Z",
-            "modified": "2023-07-13T02:21:15.380Z",
+            "created": "2023-07-18T13:47:49.998Z",
+            "modified": "2023-07-18T14:28:49.698Z",
             "headers": [
                 {
                     "name": "Authorization",

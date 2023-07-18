@@ -22,3 +22,5 @@ def init_app(app: Frame):
     if not os.path.exists(db_db):
         from services.models.users import init_db
         init_db(app, engine, Session)
+        from services.models.codes import init_db
+        init_db(app, engine, Session)

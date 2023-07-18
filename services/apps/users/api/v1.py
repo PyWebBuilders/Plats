@@ -1,13 +1,11 @@
-from bframe import current_app, g, request
+from bframe import current_app, request
 from services.apps.base import BaseAPI
-from services.apps.decorators import login_required
 from services.models import Session
 from services.models.users import User
 from services.utils import static
 from services.utils.jwt_helper import decode_token, encode_token, parse_token
-from services.utils.orm import object_2_dict, objects_2_dict
+from services.utils.orm import object_2_dict
 from services.utils.package import bad_package, ok_package
-from services.utils.role_helper import check_role
 from sqlalchemy import or_
 
 
@@ -82,10 +80,4 @@ def refresh_token():
 
 class UserAPI(BaseAPI):
 
-    @login_required
-    def get(self, *args, **kwds):
-        query = Session().query(User).filter(User.state == static.state_valid())
-        if check_role() != static.role_admin():
-            query = query.filter(User.id == g.user.id)
-        users = query.all()
-        return ok_package(objects_2_dict(users))
+    class_table = User
