@@ -1,15 +1,15 @@
-from bframe import abort, g
+from bframe import MethodView, abort, g
 from services import constraints
+from services.apps.decorators import class_login_required
 from services.models import Session
 from services.utils import static
 from services.utils.orm import objects_2_dict
 from services.utils.package import bad_package, ok_package
 from services.utils.role_helper import check_role
-from services.apps.decorators import class_login_required
 
 
 @class_login_required
-class BaseAPI:
+class BaseAPI(MethodView):
 
     class_table = None
 
